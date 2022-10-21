@@ -8,7 +8,7 @@ cd cssclient
 mkdir build  
 cd build  
 cmake3 ../  
-make  
+make -j 4 
    
 #build rpm package  
-
+./buildrpm.sh

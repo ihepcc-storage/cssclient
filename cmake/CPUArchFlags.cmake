@@ -57,7 +57,7 @@ elseif (CMAKE_SYSTEM_PROCESSOR MATCHES "arm64|aarch64")
   elseif (HAVE_ARMV8_CRC)
     set(CPU_ARCH_FLAGS "-march=armv8-a+crc")
   endif() # CRC/CRYPTO
-  CHECK_CXX_COMPILER_FLAG(-mfpu=neon HAVE_ARM_NEON)
+  #CHECK_CXX_COMPILER_FLAG(-mfpu=neon HAVE_ARM_NEON)
 
 else()
   message(WARNING "Could not determine platform. No cpu accel. will be used ")
