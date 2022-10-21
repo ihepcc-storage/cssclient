@@ -1,6 +1,6 @@
 Name:		cssclient
-Version:	1.0
-Release:	1
+Version:	VERSION_UNDEF	
+Release:	RELEASE_UNDEF
 Summary:	Computation Storage Client for EOS Storage System
 Vendor: 	CC-IHEP
 Group:		Application/Plug-in
@@ -16,7 +16,7 @@ BuildRequires: xrootd-client-devel >= 4.12.1
 
 %prep
 rm -rf $RPM_BUILD_ROOT
-tar -xvfz $RPM_SOURCE_DIR/cssclient.tar.gz
+tar xvfz $RPM_SOURCE_DIR/cssclient.tar.gz
 
 %build
 cd ./cssclient/build/
