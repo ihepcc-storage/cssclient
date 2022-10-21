@@ -1,4 +1,4 @@
-CSSClient: This is a tool to operate computational storage functions implemented in EOS <br>
+CSSClient is a tool to operate computational storage functions implemented in EOS <br>
 Developed by CCIHEP, 2022 <br>
 
 #compile  
