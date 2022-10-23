@@ -20,6 +20,6 @@ make -j 4
 2) cssclient --help to check the manunal
 3) cssclient -f /eos/user/chyd/data.txt -c sort 
 
-#notice 
+#notice  
 Of Course, computational storage in EOS can be used without cssclient, ie, it is fine to use xrootd protocal directly, for example:  
 xrdcp root://eosbak02.ihep.ac.cn//eos/user/chyd/data.txt?css=sort - 
