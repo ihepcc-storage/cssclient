@@ -11,4 +11,4 @@ tar cvzf $TNAME --exclude=cssclient/build cssclient
 mv $TNAME cssclient
 cd cssclient
 rpmbuild -ta $TNAME
-#rm -rf $TNAME 
+rm -rf $TNAME 
