@@ -23,11 +23,11 @@ void usage(const char *func)
 	printf("usage: %s [option] -f [filename] -c [cssfunc]\n", func);
 	printf("\toption\n\t-v or -V shows VERSION\n");
 	printf("\t-d or --debug shows detailed information\n");
-    printf("For example: %s -f /eos/user/chyd/hosts -c sort\n", func);
-    printf("Currently cssfunc support: sort, cat, zstd\n");
+    	printf("For example: %s -f /eos/user/chyd/data.txt -c sort\n", func);
+    	printf("Currently cssfunc support: sort, cat, zstd\n");
 	char *mgmhost = getenv("EOS_MGM_URL");
 	if (mgmhost == NULL) {
-		printf("ERROR: Please set 'EOS_MGM_URL' like 'root://eosbak02.ihep.ac.cn//'\n");
+		printf("ERROR: Please set 'EOS_MGM_URL' like 'export EOS_MGM_URL=root://eosbak02.ihep.ac.cn//'\n");
 	}	
 }
 
