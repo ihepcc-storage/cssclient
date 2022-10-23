@@ -15,10 +15,13 @@ The cssclient is a tool to operate computation storage function implemented in E
 BuildRequires: xrootd-client-devel >= 4.12.1
 
 %prep
-rm -rf $RPM_BUILD_ROOT
+test -e cssclient && rm -rf cssclient
+test -e $RPM_BUILD_ROOT && rm -r $RPM_BUILD_ROOT
 tar xvfz $RPM_SOURCE_DIR/cssclient.tar.gz
 
+
 %build
+mkdir -p ./cssclient/build
 cd ./cssclient/build/
 cmake3 .. -L -DCMAKE_INSTALL_FULL_LIBDIR=/usr/local -DCMAKE_INSTALL_PREFIX=/usr/local
 make
