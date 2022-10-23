@@ -1,5 +1,5 @@
 CSSClient is a tool to operate computational storage functions implemented in EOS <br>
-Developed by CCIHEP, 2022 <br>
+Developed by CC-IHEP, 2022 <br>
 
 
 
