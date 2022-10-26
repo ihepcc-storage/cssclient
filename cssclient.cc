@@ -20,7 +20,7 @@ int errflg;
 
 void usage(const char *func)
 {
-	printf("usage: %s [option] <-f filename> <-c cssfunc> [-o outdir] -\n", func);
+	printf("usage: %s [option] <-f filename> <-c cssfunc> [-o outdir] \n", func);
 	printf("\toption\n\t-v or -V shows VERSION\n");
 	printf("\t-d or --debug shows detailed information\n");
     	printf("For example: %s -f /eos/user/chyd/data.txt -c sort\n", func);
