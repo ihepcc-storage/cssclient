@@ -20,7 +20,7 @@ int errflg;
 
 void usage(const char *func)
 {
-	printf("usage: %s [option] -f [filename] -c [cssfunc]\n", func);
+	printf("usage: %s [option] <-f filename> <-c cssfunc> [-o outdir] -\n", func);
 	printf("\toption\n\t-v or -V shows VERSION\n");
 	printf("\t-d or --debug shows detailed information\n");
     	printf("For example: %s -f /eos/user/chyd/data.txt -c sort\n", func);
@@ -49,13 +49,14 @@ int main(int argc, char *argv[])
 
 	char *filename = NULL;
 	char *serveruri = NULL;
+	char *outdir = NULL;
 	char buffer[BUFLEN];
 	char url[1024];
 	const char *cssfunc = "cat";
 	uint32_t nbytes = 0;
 	int c;
 	
-	while ((c = getopt_long(argc, argv, "Vvdhf:c:", longopts, NULL)) != EOF) {
+	while ((c = getopt_long(argc, argv, "Vvdhf:c:o:", longopts, NULL)) != EOF) {
         switch (c) {
         case 'h':
             helpflg = 1;
@@ -65,6 +66,9 @@ int main(int argc, char *argv[])
             break;
         case 'c':
             cssfunc = optarg;
+			break;
+		case 'o':
+			outdir = optarg;
 			break;
         case 'd':
             debugflg = 1;
@@ -94,6 +98,9 @@ int main(int argc, char *argv[])
 	} 
 	
 	sprintf(url, "%s%s?css=%s", serveruri, filename, cssfunc);
+	if (outdir) {
+		sprintf(url, "%s&css.outdir=%s", url, outdir);
+	}
 	//url += "?css=";
 	//url += cssfunc;
 	if (debugflg) 
@@ -113,7 +120,11 @@ int main(int argc, char *argv[])
     	}
 	}
 	if (strcmp("zstd", cssfunc) == 0) {
-		printf("file '%s.zst' created\n", filename);
+		if (outdir) {
+			char *fn = basename(filename);
+			printf("file '%s/%s.zst' created\n", outdir, fn);
+		} else
+			printf("file '%s.zst' created\n", filename);
 	}
 	XrdPosixXrootd::Close(fd);
 	return 0;
