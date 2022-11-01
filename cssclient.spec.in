@@ -12,7 +12,7 @@ BuildRoot: %{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 %description
 The cssclient is a tool to operate computation storage function implemented in EOS Storage System
 
-BuildRequires: xrootd-client-devel >= 4.12.1
+Requires: xrootd-client-devel >= 4.12.1
 
 %prep
 test -e cssclient && rm -rf cssclient
