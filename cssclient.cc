@@ -24,7 +24,7 @@ void usage(const char *func)
 	printf("\toption\n\t-v or -V shows VERSION\n");
 	printf("\t-d or --debug shows detailed information\n");
     	printf("For example: %s -f /eos/user/chyd/data.txt -c sort\n", func);
-    	printf("Currently cssfunc support: sort, cat, zstd\n");
+    	printf("Currently cssfunc support: sort, cat, zstd, km2a_decode\n");
 	char *mgmhost = getenv("EOS_MGM_URL");
 	if (mgmhost == NULL) {
 		printf("ERROR: Please set 'EOS_MGM_URL' like 'export EOS_MGM_URL=root://eosbak02.ihep.ac.cn//'\n");
