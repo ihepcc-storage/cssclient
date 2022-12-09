@@ -126,6 +126,13 @@ int main(int argc, char *argv[])
 		} else
 			printf("file '%s.zst' created\n", filename);
 	}
+	if (strcmp("km2a_decode", cssfunc) == 0) {
+        if (outdir) {
+            char *fn = basename(filename);
+            printf("file '%s/%s.root' created\n", outdir, fn);
+        } else
+            printf("file '%s.root' created\n", filename);
+    }
 	XrdPosixXrootd::Close(fd);
 	return 0;
 }
